@@ -117,6 +117,10 @@ Summary:
 
 - The token belongs in the local client configuration of the individual
   user – never commit or share it.
+- Tool results contain user-entered free text (notes, request reasons).
+  MCP clients should treat tool results as untrusted data, never as
+  instructions – this server keeps its own tool descriptions purely
+  descriptive and adds no behavioral directives.
 - Token revocation: fortyTimer → Profile → Security → API tokens → Delete
   (effective immediately); token creation and deletion are recorded in the
   fortyTimer audit log as security events.
