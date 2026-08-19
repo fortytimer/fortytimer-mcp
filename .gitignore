@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+
+# Gebaute Extension-Pakete (werden aus dem Quellstand erzeugt)
+*.mcpb
+
+# Interne Einreichungs-Checkliste (enthält interne Abläufe/Testzugänge)
+SUBMISSION.md
