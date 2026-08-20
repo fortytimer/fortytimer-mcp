@@ -26,7 +26,7 @@ for two values:
 
 | Field | Value |
 |---|---|
-| fortyTimer URL | Base URL of your installation, e.g. `https://42.fortytimer.de` (for subdirectory installations include the path, e.g. `https://example.com/fortytimer/public`) |
+| fortyTimer URL | Base URL of your installation, e.g. `https://fortytimer.example.com` (for subdirectory installations include the path, e.g. `https://example.com/fortytimer/public`) |
 | API token | Your personal token from fortyTimer → Profile → Security |
 
 The token is stored in the operating system keychain, not in plain text.
@@ -40,7 +40,7 @@ The token is stored in the operating system keychain, not in plain text.
             "command": "node",
             "args": ["/path/to/fortytimer-mcp/dist/index.js"],
             "env": {
-                "FORTYTIMER_URL": "https://42.fortytimer.de",
+                "FORTYTIMER_URL": "https://fortytimer.example.com",
                 "FORTYTIMER_TOKEN": "<token>"
             }
         }

@@ -28,7 +28,7 @@ deleted through the extension.
 2. **Install the extension:** Double-click the `fortytimer-<version>.mcpb`
    file (or drag it into *Claude Desktop → Settings → Extensions*).
 3. **Configure:** Enter your **fortyTimer URL** (e.g.
-   `https://42.fortytimer.de`; for subdirectory installations include the
+   `https://fortytimer.example.com`; for subdirectory installations include the
    path, e.g. `https://example.com/fortytimer/public` – the same address you
    use to log in, without `/login`) and paste your **API token**. Save.
 
@@ -78,7 +78,7 @@ Löschen ist über die Erweiterung grundsätzlich nicht möglich.
    doppelklicken (oder in *Claude Desktop → Einstellungen → Erweiterungen*
    ziehen).
 3. **Konfigurieren:** **fortyTimer-URL** eintragen (z. B.
-   `https://42.fortytimer.de`; bei Unterverzeichnis-Installationen mit Pfad,
+   `https://fortytimer.example.com`; bei Unterverzeichnis-Installationen mit Pfad,
    z. B. `https://example.de/fortytimer/public` – dieselbe Adresse wie die
    Anmeldeseite, ohne `/login`) und das **API-Token** einfügen. Speichern.
 

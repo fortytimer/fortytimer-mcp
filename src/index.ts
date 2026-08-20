@@ -8,7 +8,7 @@
  * the fortyTimer installation – the token inherits the scope of its owner.
  *
  * Configuration via environment variables:
- *   FORTYTIMER_URL    Base URL of the installation (e.g. https://42.fortytimer.de)
+ *   FORTYTIMER_URL    Base URL of the installation (e.g. https://fortytimer.example.com)
  *   FORTYTIMER_TOKEN  Personal API token (fortyTimer → Profile → Security)
  */
 

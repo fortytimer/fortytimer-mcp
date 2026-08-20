@@ -36,7 +36,7 @@
         "fortytimer_url": {
             "type": "string",
             "title": "fortyTimer URL",
-            "description": "Base URL of your fortyTimer installation, e.g. https://42.fortytimer.de",
+            "description": "Base URL of your fortyTimer installation, e.g. https://fortytimer.example.com",
             "required": true
         },
         "api_token": {
