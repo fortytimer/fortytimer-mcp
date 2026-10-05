@@ -75,6 +75,7 @@ npm install
 | `fortytimer_list_requests` | Leave requests by user/status/type/date range |
 | `fortytimer_list_users` | Users within the visibility scope (for `user_id` parameters) |
 | `fortytimer_list_projects` | Projects (for `project_id` filters) |
+| `fortytimer_list_project_budgets` | Remaining project budget per project, optionally as of a date (admins and supervisors; requires the license module "Projektzeit-Budget") |
 
 All tools are read-only (`readOnlyHint`). Date ranges are limited to 366 days
 server-side, lists paginate with 50 entries per page (`page` parameter).

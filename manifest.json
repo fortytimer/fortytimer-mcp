@@ -2,9 +2,9 @@
     "manifest_version": "0.2",
     "name": "fortytimer",
     "display_name": "fortyTimer",
-    "version": "0.2.2",
+    "version": "0.3.0",
     "icon": "icon.png",
-    "description": "Read-only access to fortyTimer: flextime and vacation balances, work and project times, leave requests.",
+    "description": "Read-only access to fortyTimer: flextime and vacation balances, work and project times, leave requests, project budgets.",
     "long_description": "Connects Claude to a fortyTimer installation (requires the license module “fortyTimer API”). All tools are strictly read-only; visibility exactly matches the fortyTimer account of the token owner (admin: all users, supervisor: own approver groups, employee: self only). Free-text fields of sick-leave requests are never returned for data-protection reasons. The personal API token is created in fortyTimer under Profile → Security → API tokens and is stored in the operating system keychain.",
     "author": {
         "name": "fortytwo Consulting GbR",
@@ -55,7 +55,8 @@
         { "name": "fortytimer_list_project_times", "description": "Project time bookings, filterable by project and billability" },
         { "name": "fortytimer_list_requests", "description": "Leave requests by user, status, type and date range" },
         { "name": "fortytimer_list_users", "description": "Users within the visibility scope" },
-        { "name": "fortytimer_list_projects", "description": "Project list" }
+        { "name": "fortytimer_list_projects", "description": "Project list" },
+        { "name": "fortytimer_list_project_budgets", "description": "Remaining project time budget per project" }
     ],
     "keywords": ["zeiterfassung", "time tracking", "fortytimer", "gleitzeit", "flextime", "vacation", "urlaub"],
     "compatibility": {

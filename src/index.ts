@@ -68,8 +68,15 @@ async function apiGet(
 
     const hint: Record<number, string> = {
         401: "The API token is invalid or has been revoked. Create a new token in fortyTimer under Profile → Security → API tokens.",
-        403: "Access denied – the license module 'fortyTimer API' is missing, the token lacks read permission, or the user account is no longer active.",
-        404: "Not found – a given user_id is probably outside the visibility scope of the token owner.",
+        403:
+            path === "/project-budgets"
+                ? "Access denied – project budgets require the license modules 'fortyTimer API' and 'Projektzeit-Budget' and are available to administrators and supervisors only."
+                : "Access denied – the license module 'fortyTimer API' is missing, the token lacks read permission, or the user account is no longer active.",
+        // Older fortyTimer installations do not have the project budget endpoint yet
+        404:
+            path === "/project-budgets"
+                ? "Not found – this fortyTimer installation does not provide project budgets yet; a newer fortyTimer version is required."
+                : "Not found – a given user_id is probably outside the visibility scope of the token owner.",
         422: "Invalid parameters – see error details. Pass dates as YYYY-MM-DD and limit ranges to at most 366 days.",
         429: "Rate limit reached (60 requests per minute). Wait briefly and retry.",
     };
@@ -105,7 +112,7 @@ function fail(error: unknown) {
 
 const server = new McpServer({
     name: "fortytimer",
-    version: "0.2.2",
+    version: "0.3.0",
 });
 
 const readOnly = { readOnlyHint: true, destructiveHint: false, openWorldHint: true };
@@ -315,6 +322,35 @@ server.registerTool(
     async () => {
         try {
             return ok("Projects:", await apiGet("/projects"));
+        } catch (error) {
+            return fail(error);
+        }
+    },
+);
+
+server.registerTool(
+    "fortytimer_list_project_budgets",
+    {
+        title: "Project budgets",
+        description:
+            "Remaining project time budget per project in minutes and H:MM, plus the configured warning threshold " +
+            "and whether a project is below it. Projects without a maintained budget are listed with budget_maintained = false. " +
+            "Requires the license modules 'fortyTimer API' and 'Projektzeit-Budget'; available to administrators and supervisors. " +
+            "as_of is calculated from the current bookings up to that date, so a later correction of an earlier booking also changes past values.",
+        inputSchema: {
+            project_id: z
+                .number()
+                .int()
+                .positive()
+                .optional()
+                .describe("Project ID (from fortytimer_list_projects). Omitted: all projects"),
+            as_of: dateParam("Reference date (default: today, at most today)"),
+        },
+        annotations: readOnly,
+    },
+    async ({ project_id, as_of }) => {
+        try {
+            return ok("Project budgets:", await apiGet("/project-budgets", { project_id, as_of }));
         } catch (error) {
             return fail(error);
         }
