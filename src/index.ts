@@ -112,7 +112,7 @@ function fail(error: unknown) {
 
 const server = new McpServer({
     name: "fortytimer",
-    version: "0.3.0",
+    version: "0.3.1",
 });
 
 const readOnly = { readOnlyHint: true, destructiveHint: false, openWorldHint: true };

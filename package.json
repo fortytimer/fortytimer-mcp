@@ -1,6 +1,6 @@
 {
     "name": "fortytimer-mcp",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Read-only MCP-Server für fortyTimer – stellt Gleitzeit-/Urlaubssalden, Zeiteinträge, Projektzeiten und Anträge als MCP-Tools bereit (Lizenz-Modul api_readonly erforderlich).",
     "license": "MIT",
     "type": "module",

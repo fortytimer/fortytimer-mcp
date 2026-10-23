@@ -2,7 +2,7 @@
     "manifest_version": "0.2",
     "name": "fortytimer",
     "display_name": "fortyTimer",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "icon": "icon.png",
     "description": "Read-only access to fortyTimer: flextime and vacation balances, work and project times, leave requests, project budgets.",
     "long_description": "Connects Claude to a fortyTimer installation (requires the license module “fortyTimer API”). All tools are strictly read-only; visibility exactly matches the fortyTimer account of the token owner (admin: all users, supervisor: own approver groups, employee: self only). Free-text fields of sick-leave requests are never returned for data-protection reasons. The personal API token is created in fortyTimer under Profile → Security → API tokens and is stored in the operating system keychain.",
